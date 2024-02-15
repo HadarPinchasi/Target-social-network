@@ -25,7 +25,7 @@ function AddPost({ onAddPost }) {
             <div className="card-body" style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <img src="beyonce.jpg" className="rounded-circle" style={{ width: '40px', height: '40px', marginRight: '10px' }} height='100%' alt=" "></img>
-                    <div className="input-group mb-3">
+                    <div className="input-group mb-3">   
                         <input type="text" className="form-control" placeholder="What are you thinking about?" aria-label="Recipient's username"
                             aria-describedby="button-addon2" value={inputContent} onChange={(e) => setInputContent(e.target.value)} />
                         <div className="input-group-append">
