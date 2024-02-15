@@ -1,0 +1,26 @@
+﻿body
+{
+}
+.list-group-item{
+    border:0;
+    background-color:transparent;
+
+}
+    .list-group-item:hover {
+        background-color: lightgray;
+        cursor: pointer;
+    }
+#wannaShadow:hover {
+    background-color: lightgray;
+}
+.list-group-item .object {
+    font-size: 1.7rem; 
+}
+.navbar.container {
+    display: grid;
+}
+.navbar > .container {
+    display: grid;
+    justify-content: initial;
+}
+

@@ -1,0 +1,13 @@
+﻿#likeButton:hover {
+    background-color: lightgrey;
+}
+.dropdown-toggle::after {
+    display: none;
+
+}
+.dropdown {
+    background-color: transparent;
+}
+.dropdown-menu:hover {
+    cursor: pointer;
+}

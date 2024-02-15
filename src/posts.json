@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "1",
+    "time": "2 houra ago",
+    "content":"first post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 3,
+    "shares": 9
+     
+  },
+  {
+    "id": 2,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "2",
+    "time": "2 houra ago",
+    "content": "second post",
+    "photo": "view.jpg",
+    "likes": 14,
+    "comments": 23,
+    "shares": 9
+  },
+  {
+    "id": 3,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "3",
+    "time": "2 houra ago",
+    "content": "3rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 5,
+    "shares": 8
+  },
+  {
+    "id": 4,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "4",
+    "time": "2 houra ago",
+    "content": "4rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 9,
+    "shares": 7
+  },
+  {
+    "id": 5,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "5",
+    "time": "2 houra ago",
+    "content": "5rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 9,
+    "shares": 1
+  },
+  {
+    "id": 6,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "6",
+    "time": "2 houra ago",
+    "content": "6rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 6,
+    "shares": 3
+  },
+  {
+    "id": 7,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "7",
+    "time": "2 houra ago",
+    "content": "7rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 9,
+    "shares": 2
+  },
+  {
+    "id": 8,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "8",
+    "time": "2 houra ago",
+    "content": "8rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 45,
+    "shares": 9
+  },
+  {
+    "id": 9,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "9",
+    "time": "2 houra ago",
+    "content": "9rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 19,
+    "shares": 7
+  },
+  {
+    "id": 10,
+    "profilePicture": "beyonce.jpg",
+    "firstName": "beyonce",
+    "lastName": "10",
+    "time": "2 houra ago",
+    "content": "10rd post",
+    "photo": "view.jpg",
+    "likes": 23,
+    "comments": 15,
+    "shares": 8
+  }
+
+
+]
+ 

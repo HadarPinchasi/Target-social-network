@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "Postid": 1,
+    "CommentprofilePicture": "beyonce.jpg",
+    "CommentfirstName": "beyonce",
+    "CommentlastName": "1",
+    "Commentcontent": "id1a"
+  },
+  {
+    "id": 2,
+    "Postid": 1,
+    "CommentprofilePicture": "beyonce.jpg",
+    "CommentfirstName": "beyonce",
+    "CommentlastName": "1",
+    "Commentcontent": "id1b"
+  },
+  {
+    "id": 3,
+    "Postid": 3,
+    "CommentprofilePicture": "beyonce.jpg",
+    "CommentfirstName": "beyonce",
+    "CommentlastName": "1",
+    "Commentcontent": "id3"
+  },
+  {
+    "id": 4,
+    "Postid": 4,
+    "CommentprofilePicture": "beyonce.jpg",
+    "CommentfirstName": "beyonce",
+    "CommentlastName": "1",
+    "Commentcontent": "id4"
+  },
+  {
+    "id": 5,
+    "Postid": 5,
+    "CommentprofilePicture": "beyonce.jpg",
+    "CommentfirstName": "beyonce",
+    "CommentlastName": "1",
+    "Commentcontent": "id5"
+  },
+  {
+    "id": 1,
+    "Postid": 10,
+    "CommentprofilePicture": "beyonce.jpg",
+    "CommentfirstName": "beyonce",
+    "CommentlastName": "1",
+    "Commentcontent": "id10"
+  }
+]
