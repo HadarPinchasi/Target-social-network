@@ -3,9 +3,9 @@
 const newCommentInfo = (index, postId, content) => ({
     id: index + 1,
     Postid: postId,
-    CommentprofilePicture: "beyonce.jpg",
-    CommentfirstName: "beyonce",
-    CommentlastName: "1",
+    CommentprofilePicture: "photos/profile.jpg",
+    CommentfirstName: "Hadar",
+    CommentlastName: "Pinchasi",
     Commentcontent: content
 });
 export default newCommentInfo;

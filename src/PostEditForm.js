@@ -9,7 +9,7 @@ function PostEditForm({ editingContent, editingPhoto, onContentChange, onPhotoCh
                     <img src={editingPhoto} alt="Edited" style={{ maxWidth: '606px', maxHeight: '500px' }} />
                 </div>
             )}
-            <div class="row">
+            <div className="row">
                 <label className="btn btn-light col-md-3" style={{ maxHeight: '37px' }}>
                     change photo <input type="file" accept="image/*" style={{ display: 'none' }} onChange={onPhotoChange} />
                 </label>

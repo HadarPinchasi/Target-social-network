@@ -1,6 +1,6 @@
 const infos = [
     {
-        validationCustom: "validationCustom01", description: 'First !name', inputType: "text", inputId: "validationCustom01",
+        validationCustom: "validationCustom01", description: 'First name', inputType: "text", inputId: "validationCustom01",
         patternInput: "[A-Za-z]{1,20}", instructions: 'Letters only, up to about 20 letters'
     },
     {

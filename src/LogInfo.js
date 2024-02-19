@@ -1,9 +1,12 @@
 // JavaScript source code
 import './index.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 function LogInfo({ write }) {
     return (
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"></input>
+        <div className="form-floating mb-3">
+            <input type="email" className="form-control" id="floatingInput"></input>
             <label for="floatingInput">{write}</label>
         </div>
     )

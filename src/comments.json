@@ -2,49 +2,114 @@
   {
     "id": 1,
     "Postid": 1,
-    "CommentprofilePicture": "beyonce.jpg",
-    "CommentfirstName": "beyonce",
-    "CommentlastName": "1",
-    "Commentcontent": "id1a"
+    "CommentprofilePicture": "photos/moshe.jpg",
+    "CommentfirstName": "Moshe",
+    "CommentlastName": "Kraus",
+    "Commentcontent": "wow your life is amaizing!!"
   },
   {
     "id": 2,
     "Postid": 1,
-    "CommentprofilePicture": "beyonce.jpg",
-    "CommentfirstName": "beyonce",
-    "CommentlastName": "1",
-    "Commentcontent": "id1b"
+    "CommentprofilePicture": "photos/david.jpg",
+    "CommentfirstName": "David",
+    "CommentlastName": "Davidovich",
+    "Commentcontent": "I'm so jealous! I study all day"
   },
   {
     "id": 3,
     "Postid": 3,
-    "CommentprofilePicture": "beyonce.jpg",
-    "CommentfirstName": "beyonce",
-    "CommentlastName": "1",
-    "Commentcontent": "id3"
+    "CommentprofilePicture": "photos/shosha.jpg",
+    "CommentfirstName": "Shosha",
+    "CommentlastName": "Fisher",
+    "Commentcontent": "Miss you here back home"
   },
   {
     "id": 4,
-    "Postid": 4,
-    "CommentprofilePicture": "beyonce.jpg",
-    "CommentfirstName": "beyonce",
-    "CommentlastName": "1",
-    "Commentcontent": "id4"
+    "Postid": 3,
+    "CommentprofilePicture": "photos/lilly.jpg",
+    "CommentfirstName": "Lilly",
+    "CommentlastName": "Cohen",
+    "Commentcontent": "Stay safe"
   },
   {
     "id": 5,
-    "Postid": 5,
-    "CommentprofilePicture": "beyonce.jpg",
-    "CommentfirstName": "beyonce",
-    "CommentlastName": "1",
-    "Commentcontent": "id5"
+    "Postid": 3,
+    "CommentprofilePicture": "photos/maayen.jpg",
+    "CommentfirstName": "Maayan",
+    "CommentlastName": "curls",
+    "Commentcontent": "Don't forget to bring presents!!"
   },
   {
-    "id": 1,
+    "id": 6,
+    "Postid": 4,
+    "CommentprofilePicture": "photos/yair.jpg",
+    "CommentfirstName": "Yair",
+    "CommentlastName": "Somech",
+    "Commentcontent": "Hahahahah you are so funny"
+  },
+  {
+    "id": 7,
+    "Postid": 4,
+    "CommentprofilePicture": "photos/david.jpg",
+    "CommentfirstName": "David",
+    "CommentlastName": "Davidovich",
+    "Commentcontent": "Sooooo cute"
+  },
+  {
+    "id": 8,
+    "Postid": 5,
+    "CommentprofilePicture": "photos/naftali.jpg",
+    "CommentfirstName": "Naftali",
+    "CommentlastName": "Netanyahu",
+    "Commentcontent": "Cutest cat ever"
+  },
+  {
+    "id": 9,
+    "Postid": 6,
+    "CommentprofilePicture": "photos/ariel.jpg",
+    "CommentfirstName": "Ariel",
+    "CommentlastName": "Shon",
+    "Commentcontent": "I'm so sad I'm allergic"
+  },
+  {
+    "id": 10,
+    "Postid": 7,
+    "CommentprofilePicture": "photos/lotem.jpg",
+    "CommentfirstName": "Lotem",
+    "CommentlastName": "Ross",
+    "Commentcontent": "SO CUTE!!!"
+  },
+  {
+    "id": 11,
+    "Postid": 9,
+    "CommentprofilePicture": "photos/lotem.jpg",
+    "CommentfirstName": "Lotem",
+    "CommentlastName": "Ross",
+    "Commentcontent": "Hope to see you in gryffindor!!!"
+  },
+  {
+    "id": 12,
     "Postid": 10,
-    "CommentprofilePicture": "beyonce.jpg",
-    "CommentfirstName": "beyonce",
-    "CommentlastName": "1",
-    "Commentcontent": "id10"
+    "CommentprofilePicture": "photos/lotem.jpg",
+    "CommentfirstName": "Lotem",
+    "CommentlastName": "Ross",
+    "Commentcontent": "Me too. this assignment is so long"
+  },
+  {
+    "id": 13,
+    "Postid": 10,
+    "CommentprofilePicture": "photos/maayen.jpg",
+    "CommentfirstName": "Maayan",
+    "CommentlastName": "Curls",
+    "Commentcontent": "Studying from morning till night"
+  },
+  {
+    "id": 14,
+    "Postid": 10,
+    "CommentprofilePicture": "photos/ariel.jpg",
+    "CommentfirstName": "Ariel",
+    "CommentlastName": "Somech",
+    "Commentcontent": "I just woke up"
   }
+
 ]

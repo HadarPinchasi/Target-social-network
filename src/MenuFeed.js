@@ -8,7 +8,7 @@ function MenuFeed({ menuInfos }) {
                 return <MenuObject {...option} key ={key}/>
             });
     return (
-        <ul class="list-group vh-100">
+        <ul className="list-group vh-100">
             {optionsList}
         <hr className="list-group-divider" />
         </ul>
