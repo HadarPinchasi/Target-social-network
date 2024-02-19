@@ -12,6 +12,7 @@
     }
 #wannaShadow:hover {
     background-color: lightgray;
+    cursor: pointer;
 }
 .list-group-item .object {
     font-size: 1.7rem; 
@@ -24,3 +25,15 @@
     justify-content: initial;
 }
 
+.second {
+    margin-top: 70px; 
+}
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}

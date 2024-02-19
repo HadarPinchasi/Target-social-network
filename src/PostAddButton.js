@@ -7,7 +7,7 @@ function PostAddButton({ onAddPost, setInputContent }) {
     };
 
     return (
-        <button className="btn btn-outline-secondary" style={{ backgroundColor: '#6f42c1', color: 'black' }} type="button" onClick={addPost}>Post</button>
+        <button className="btn btn-primary" type="button" onClick={addPost}>Post</button>
     );
 }
 

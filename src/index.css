@@ -11,9 +11,9 @@ ul {
     list-style-type: none;
 }
 
-button {
-    background-color: #6f42c1;
-    color: white;
+#startButton {
+    /*  background-color: #6f42c1;
+    color: white;*/
     border: 1px solid #6f42c1;
     transition: background-color 0.3s;
     font-size: 19px;
@@ -22,9 +22,9 @@ button {
     border-radius: 6px;
 }
 
-    button:hover {
+  /*  button:hover {
         background-color: #4b2a7d;
-    }
+    }*/
 
 .logo {
     margin-left: 10px;
@@ -37,7 +37,7 @@ button {
     }
 
         .logo li:nth-child(1) {
-            color: #6f42c1;
+            color:blue;
             font-size: 70px;
             font-weight: 650;
         }
@@ -76,14 +76,14 @@ body {
     }
 
 #danger-btn {
-    background-color: #ffa07a;
-    border: 1px solid #ffa07a;
+    background-color: #42b72a;
+    border: 1px solid #42b72a;
     transition: background-color 0.3s;
     width: 200px;
 }
 
     #danger-btn:hover {
-        background-color: #ff6347;
+        background-color: #36821f;
     }
 
 
@@ -94,4 +94,8 @@ body {
     display: flex;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
     padding: 7px;
+}
+
+#openingScreen {
+    margin-top: 150px;
 }

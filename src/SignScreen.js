@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import infosList from './infosList';
 import InfoImage from './InfoImage';
-import showImage from './showImage';
 function SignUpForm() {
     const [validationErrors, setValidationErrors] = useState({});
    
 
     useEffect(() => {
         const forms = document.querySelectorAll('.needs-validation');
-
+        
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
                 if (!form.checkValidity() || !validatePassword(form)) {
@@ -17,7 +16,7 @@ function SignUpForm() {
                 }
 
                 form.classList.add('was-validated');
-            }, false);
+            },false);
 
             const confirmPasswordInput = form.querySelector('#validationCustom05');
             confirmPasswordInput.addEventListener('input', () => {
@@ -69,7 +68,7 @@ function SignUpForm() {
 
     return (
 
-        <div className="col-lg-7 col-s-1">
+        <div className="col-lg-7 col-s-1" openingscree="true" id='openingScreen'>
             <form className="row g-3 needs-validation SignUpScreen d-flex p-2" noValidate>
                 {infosList}
                 <InfoImage />
