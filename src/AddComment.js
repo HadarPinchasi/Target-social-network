@@ -20,4 +20,4 @@ function AddComment({ addComment,commentInputRef } ) {
         </div>
     );
 }
-export default AddComment;
+export default AddComment; 
