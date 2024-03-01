@@ -6,8 +6,8 @@ var router = express.Router();
 router.route('/')
 /*    .get(usersController.getUser)
 */    .post(usersController.createUser);
-/*router.route('/:id')
-    .get(articleController.getArticle)
-    .patch(articleController.updateArticle)
-    .delete(articleController.deleteArticle);*/
+router.route('/:id')
+    .get(usersController.getUser)
+    .patch(usersController.updateUser)
+    .delete(usersController.deleteUser);
 module.exports = router; 
