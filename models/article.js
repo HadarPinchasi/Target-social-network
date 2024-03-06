@@ -13,6 +13,10 @@ const Article = new Schema({
     content: {
         type: String,
     },
+    userId:{
+    type: String,
+    required: true
+    },
     time: {
         type: Date,
         default: Date.now,
