@@ -2,39 +2,39 @@
 const userService = require('../services/users');
 const createUser = async (req, res) => {
     const { userName, password, firstName, lastName, profilePic } = req.body;
-    const userExist = await userService.getUserById(req.params.id);
+    const userExist = await userService.getUserByUserName(req.body.userName);
     if (userExist) {
         return res.status(409).json({ errors: ['User is already exist'] });
     }
     else {
-        res.json(await userService.createUser(userName, password, firstName, lastName, profilePic));
-        return res.status(200).json(req.body);
+        const newUser = await userService.createUser(userName, password, firstName, lastName, profilePic);
+
+/*        res.json(await userService.createUser(userName, password, firstName, lastName, profilePic));
+*/        return res.status(200).json(newUser);
     }
 };
-/*const getArticles = async (req, res) => { 
-    res.json(await articleService.getArticles());
+
+const getUser = async (req, res) => {
+    const user = await userService.getUserById(req.params.id);
+    if (!user) {
+        return res.status(404).json({ errors: ['User not found'] });
+    }
+    res.json(user);
 };
-const getArticle = async (req, res) => {
-    const article = await articleService.getArticleById(req.params.id);
-    if (!article) {
+
+const updateUser = async (req, res) => {
+    const user = await userService.updateUser(req.params.id, req.body.firstName, req.body.lastName, req.body.profilePic);
+    if (!user) {
+        return res.status(404).json({ errors: ['User not found'] });
+    }
+    res.json(user);
+};
+const deleteUser = async (req, res) => {
+    const user = await userService.deleteUser(req.params.id);
+    if (!user) {
         return res.status(404).json({ errors: ['Article not found'] });
     }
-    res.json(article);
+    res.json(user);
 };
-const updateArticle = async (req, res) => {
-    const article = await articleService.updateArticle(req.params.id, req.body.content);
-    if (!article) {
-        return res.status(404).json({ errors: ['Article not found'] });
-    }
-    res.json(article);
-};
-const deleteArticle = async (req, res) => {
-    const article = await articleService.deleteArticle(req.params.id);
-    if (!article) {
-        return res.status(404).json({ errors: ['Article not found'] });
-    }
-    res.json(article);
-};*/
-/*module.exports = { createArticle, getArticles, getArticle, updateArticle, deleteArticle };*/
-module.exports = { createUser }
+module.exports = { createUser, getUser, updateUser, deleteUser }
 

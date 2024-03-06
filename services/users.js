@@ -12,10 +12,7 @@ const getUserByUserName = async (userName) => {
 const updateUser = async (id, firstName, lastName, profilePic) => {
     const user = await getUserById(id);
     if (!user) return null;
-/*    user.firstName = firstName;
-    user.lastName = lastName;
-    user.profilePic = profilePic;
-*/    if (firstName) user.firstName = firstName;
+  if (firstName) user.firstName = firstName;
     if (lastName) user.lastName = lastName;
     if (profilePic) user.profilePic = profilePic;
 
@@ -25,6 +22,13 @@ const updateUser = async (id, firstName, lastName, profilePic) => {
 /*
 const getArticles = async () => { return await Article.find({}); };
 */
+const deletePostInUser = async (id, pid)=>{
+    const user = await getUserById(id);
+    if (!user) return null;
+    user.posts.pull(pid);
+    await user.save();
+    return user;
+}
 const deleteUser = async (id) => {
     const user = await getUserById(id);
     if (!user) return null;
@@ -32,4 +36,4 @@ const deleteUser = async (id) => {
     return user;
 };
 
-module.exports = { createUser, getUserByUserName, getUserById, updateUser, deleteUser }
+module.exports = { createUser, getUserByUserName, getUserById, updateUser, deleteUser, deletePostInUser }
