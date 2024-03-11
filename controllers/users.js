@@ -13,7 +13,16 @@ const createUser = async (req, res) => {
 */        return res.status(200).json(newUser);
     }
 };
+const requestFriend = async (req, res) => {
+    try {
+        const { userId, friendId } = req.params;
+        const user = await userService.addFriendRequest(userId, friendId);
 
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 const getUser = async (req, res) => {
     const user = await userService.getUserById(req.params.id);
     if (!user) {
@@ -36,5 +45,15 @@ const deleteUser = async (req, res) => {
     }
     res.json(user);
 };
-module.exports = { createUser, getUser, updateUser, deleteUser }
+const deleteFriend = async (req, res) => {
+    const friend = await userService.deleteFriend(req.params.id);
+    if (!friend) {
+        return res.status(404).json({ errors: ['Friend not found'] });
+    }
+    res.json(user);
+};
+const getFriends = async (req, res) => {
+    res.json(await userService.getFriends());
+};
+module.exports = { createUser, getUser, updateUser, deleteUser, getFriends, requestFriend, deleteFriend }
 

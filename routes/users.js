@@ -3,6 +3,7 @@ const usersController = require('../controllers/users');
 const articlesController = require('../controllers/article');
 const express = require('express');
 const loginController = require('../controllers/login');
+const users = require('../models/users');
 var router = express.Router();
 
 router.route('/')
@@ -17,10 +18,11 @@ router.route('/:id/posts')
 router.route('/:id/posts/:pid')
     .delete(loginController.isLoggedIn, articlesController.deleteArticle)
     .patch(loginController.isLoggedIn, articlesController.updateArticle)
-
-
-
-
-
+router.route('/:id/friends')
+    .get(usersController.getFriends)
+    .post(usersController.newFriend);
+router.route('/:id/friends/:fid')
+    .patch(usersController.approveFriend)
+    .delete(usersCobtroller.deleteFriend);
 module.exports = router; 
  

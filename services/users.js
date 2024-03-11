@@ -9,6 +9,22 @@ const getUserByUserName = async (userName) => {
     return await User.findOne({ userName });
 };
 
+const getFriends = async () => {
+    return await User.find({});
+}
+const addFriendRequest = async (userId, friendId) => {
+    try {
+        const user = await getUserById(userId);
+        if (user.friends.includes(friendId) || user.friendRequests.includes(friendId)) {
+            throw new Error('Friend request already sent or user is already a friend.');
+        }
+        user.friendRequests.push(friendId)
+        await user.save();
+        return user;
+    } catch (error) {
+        throw new Error(`Error adding friend request: ${error.message}`);
+    }
+};
 const updateUser = async (id, firstName, lastName, profilePic) => {
     const user = await getUserById(id);
     if (!user) return null;
@@ -35,5 +51,12 @@ const deleteUser = async (id) => {
     await user.deleteOne(); 
     return user;
 };
+const getFriendById = async (id) => { return await User.friends.findOne(id) };
+const deleteFriend = async (id) => {
+    const friend = await getFriendById(id);
+    if (!friend) return null;
+    await User.friends.deleteOne(id);
+    return user;
+};
 
-module.exports = { createUser, getUserByUserName, getUserById, updateUser, deleteUser, deletePostInUser }
+module.exports = { createUser, getUserByUserName, getUserById, updateUser, deleteUser, deletePostInUser, getFriends, addFriendRequest, deleteFriend }
