@@ -12,7 +12,7 @@
     <input>  profilePic4<br>
     <input>  content5<br>
     <input>  userId6<br>
-    <input>  user2Id7<br>
+    <input> ID7<br>
     <input> token8<br>
     <input> postId9<br>
     <button onclick="create()">Add</button>
@@ -27,10 +27,6 @@
     <button onclick="getFriends()">GET MY FRIENDS!</button>
     <button onclick="newFriend()">NEW FRIEND!</button>
     <button onclick="deleteFriend()">DELETE FRIEND!</button>
-
-
-
-
     <script>
         let json;
         async function create() {
@@ -153,7 +149,6 @@
             const friends = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value + '/friends').then(data => data.json())
             console.log(friends);
         }
-
     </script>
 </body>
 </html>

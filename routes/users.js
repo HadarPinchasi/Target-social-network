@@ -24,7 +24,5 @@ router.route('/:id/friends')
 router.route('/:id/friends/:fid')
     .patch(usersController.approveFriend)
     .delete(usersCobtroller.deleteFriend);
-
-
 module.exports = router; 
  
