@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input>  userName0<br>
+    <input>  password1<br>
+    <input>  firstName2<br>
+    <input>  lastName3<br>
+    <input>  profilePic4<br>
+    <input>  content5<br>
+    <input>  userId6<br>
+    <input>  user2Id7<br>
+    <input> token8<br>
+    <input> postId9<br>
+    <button onclick="create()">Add</button>
+    <button onclick="get()">Get!</button>
+    <button onclick="update()">Update!</button>
+    <button onclick="del()">Delete!</button>
+    <button onclick="login()">LOGIN!</button>
+    <button onclick="post()">POST!</button>
+    <button onclick="delAr()">DELETE ARTICLE!</button>
+    <button onclick="getPost()">GET ARTICLE!</button>
+    <button onclick="updateAr()">Update ARTICLE!</button>
+    <button onclick="getFriends()">GET MY FRIENDS!</button>
+    <button onclick="newFriend()">NEW FRIEND!</button>
+    <button onclick="deleteFriend()">DELETE FRIEND!</button>
+
+
+
+
+    <script>
+        let json;
+        async function create() {
+            const data = await fetch('http://localhost:12345/users', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userName: document.getElementsByTagName('input')[0].value,
+                    password: document.getElementsByTagName('input')[1].value,
+                    firstName: document.getElementsByTagName('input')[2].value,
+                    lastName: document.getElementsByTagName('input')[3].value,
+                    profilePic: document.getElementsByTagName('input')[4].value
+                })
+            })
+            articles = await data.json()
+            console.log(articles);
+        }
+        async function newFriend() {
+            const data = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value + '/friends', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ friendId: document.getElementsByTagName('input')[7].value }),
+            }).then(data => data.json())
+            console.log('Friend added successfully:', data);
+        }
+        async function updateAr() {
+            const tok = document.getElementsByTagName('input')[8].value;
+            const user = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value +
+                '/posts/' + document.getElementsByTagName('input')[9].value, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    'authorization': 'bearer ' + tok
+                },
+                body: JSON.stringify({
+                    content: document.getElementsByTagName('input')[5].value,
+                })
+            }).then(data => data.json())
+            console.log(user);
+        }
+
+        async function get() {
+            const user = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[5].value).then(data => data.json())
+            console.log(user);
+        }
+        async function getPost() {
+            const user = await fetch('http://localhost:12345/articles/' + document.getElementsByTagName('input')[9].value).then(data => data.json())
+            console.log(user);
+        }
+        async function update() {
+            const user = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[5].value, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    firstName: document.getElementsByTagName('input')[2].value,
+                    lastName: document.getElementsByTagName('input')[3].value,
+                    profilePic: document.getElementsByTagName('input')[4].value,
+                })
+            }).then(data => data.json())
+            console.log(user);
+        }
+
+        async function del() {
+            const user = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[5].value, {
+                method: "DELETE",
+            }).then(data => data.json())
+            console.log(user);
+        }
+        async function delAr() {
+            const tok = document.getElementsByTagName('input')[8].value;
+            const user = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value +
+                '/posts/' + document.getElementsByTagName('input')[9].value, {
+                method: "DELETE",
+                headers: {
+                    'authorization': 'bearer ' + tok
+                },
+            }).then(data => data.json())
+            console.log(user);
+        }
+        async function login() {
+            const data = {
+                userName: document.getElementsByTagName('input')[0].value,
+                password: document.getElementsByTagName('input')[1].value
+            };
+            const res = await fetch('http://localhost:12345/tokens', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            const json = await res.json()
+
+        }
+        async function post() {
+            const tok = document.getElementsByTagName('input')[8].value;
+            const data = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value + '/posts', {
+                method: "POST",
+                'headers': {
+                    'Content-Type': 'application/json',
+                    'authorization': 'bearer ' + tok
+                },
+                body: JSON.stringify({
+                    firstName: document.getElementsByTagName('input')[2].value,
+                    lastName: document.getElementsByTagName('input')[3].value,
+                    content: document.getElementsByTagName('input')[5].value,
+                    userId: document.getElementsByTagName('input')[6].value
+                })
+            })
+            articles = await data.json()
+            console.log(articles);
+        }
+        async function getFriends() {
+            const friends = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value + '/friends').then(data => data.json())
+            console.log(friends);
+        }
+
+    </script>
+</body>
+</html>
