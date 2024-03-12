@@ -25,6 +25,13 @@ const User = new Schema({
     posts: [{
         type: Schema.Types.ObjectId,
         ref: 'Post'
+    }],
+     friends: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    requestsFriends: [{
+        type: String
     }]
 
 });

@@ -6,7 +6,7 @@ const processLogin = async (req, res) => {
     const { userName, password } = req.body;
     const userExist = await loginService.getUserLog(req.body.userName, req.body.password);
     if (userExist) {
-        const data = { username: req.body.username }
+        const data = { username: req.body.userName}
         const token = jwt.sign(data, key)
         res.status(200).json({ token });
     }
@@ -23,7 +23,6 @@ const isLoggedIn = (req, res, next) => {
         try {
             // Verify the token is valid
             const data = jwt.verify(token, key);
-            console.log('The logged in user is: ' + data.username);
             // Token validation was successful. Continue to the actual function (index)
             return next()
         } catch (err) {
