@@ -3,12 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-
 const articles = require('./routes/article');
 const users = require('./routes/users');
 const login = require('./routes/login');
-/*const jwt = require("jsonwebtoken")
-*/
+
 require('custom-env').env(process.env.NODE_ENV, './config');
 mongoose.connect(process.env.CONNECTION_STRING,
     {

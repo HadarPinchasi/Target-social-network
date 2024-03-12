@@ -15,6 +15,10 @@ const Article = new Schema({
     },
     userId:{
     type: String,
+        required: true
+    },
+    userName: {
+    type: String,
     required: true
     },
     time: {
