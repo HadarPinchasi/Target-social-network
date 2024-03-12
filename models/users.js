@@ -33,6 +33,5 @@ const User = new Schema({
     requestsFriends: [{
         type: String
     }]
-
 });
 module.exports = mongoose.model('User', User);
