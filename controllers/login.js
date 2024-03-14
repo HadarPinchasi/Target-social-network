@@ -1,7 +1,7 @@
 const loginService = require('../services/login');
 const jwt = require('jsonwebtoken');
 const key = 'your_secret_key';
-
+const User = require('../models/users');
 const processLogin = async (req, res) => {
     const { userName, password } = req.body;
     const userExist = await loginService.getUserLog(req.body.userName, req.body.password);
@@ -15,21 +15,34 @@ const processLogin = async (req, res) => {
     }
 }
 // Ensure that the user sent a valid token
-const isLoggedIn = (req, res, next) => {
+const isLoggedIn = async (req, res, next) => {
     // If the request has an authorization header
     if (req.headers.authorization) {
         // Extract the token from that header
         const token = req.headers.authorization.split(" ")[1];
+
         try {
             // Verify the token is valid
             const data = jwt.verify(token, key);
-            // Token validation was successful. Continue to the actual function (index)
-            return next()
+            const username = data.username;
+
+            // Fetch the user object from the database using the username
+            const user = await User.findOne({ userName: username });
+
+            if (user) {
+                // Attach the user object to the request object
+                req.user = user;
+
+                // Token validation was successful. Continue to the actual function (index)
+                return next();
+            } else {
+                return res.status(401).send('Invalid Token');
+            }
         } catch (err) {
             return res.status(401).send("Invalid Token");
         }
-    }
-    else
+    } else {
         return res.status(403).send('Token required');
+    }
 }
-module.exports = { processLogin, isLoggedIn };
+    module.exports = { processLogin, isLoggedIn };

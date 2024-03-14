@@ -18,7 +18,7 @@ router.route('/:id/posts/:pid')
     .delete(loginController.isLoggedIn,articlesController.deleteArticle) //being used -id=username
     .patch(loginController.isLoggedIn,articlesController.updateArticle)//being used -id=username
 router.route('/:id/friends')
-    .get(loginController.isLoggedIn,usersController.getFriends)//need to do to only friends
+    .get(loginController.isLoggedIn,usersController.getFriends)
     .post(loginController.isLoggedIn,usersController.newFriendRequest);
 router.route('/:id/friends/:fid')
     .patch(loginController.isLoggedIn,usersController.approveRequest)

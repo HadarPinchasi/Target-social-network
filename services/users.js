@@ -44,7 +44,7 @@ const deletePostInUser = async (id, pid) => {
 }
 //being usedid=username
 const getPostsOf = async (id) => {
-    const articles = await Article.find({ userName: id });
+    const articles = await Article.find({ userName: id }).sort({ time: -1 });;
     if (!articles) return null;
     return articles;
 };
@@ -73,6 +73,8 @@ const getRequests = async (userName) => {
     );
     return friends;
 };
+
+
 const getFriends = async (userName) => {
     const user = await getUserByUserName(userName);
     if (!user) return null;

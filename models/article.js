@@ -13,17 +13,26 @@ const Article = new Schema({
     content: {
         type: String,
     },
-    userId:{
-    type: String,
+    userId: {
+        type: String,
         required: true
     },
     userName: {
-    type: String,
-    required: true
+        type: String,
+        required: true
+    },
+    photo:{
+        type: String,
+    },
+    profilePic: {
+        type: String,
+        required: true
     },
     time: {
         type: Date,
         default: Date.now,
     }
+    
+
 });
 module.exports = mongoose.model('Article', Article);

@@ -10,37 +10,40 @@ const createUser = async (req, res) => {
     }
     else {
         const newUser = await userService.createUser(userName, password, firstName, lastName, profilePic);
-
-/*        res.json(await userService.createUser(userName, password, firstName, lastName, profilePic));
-*/        return res.status(200).json(newUser);
+      return res.status(200).json(newUser);
     }
 };
 
 //being used id=username
 const getUser = async (req, res) => {
-    const user = await userService.getUserByUserName(req.params.id);
-    if (!user) {
+    const user = req.user; 
+if (!user) {
         return res.status(404).json({ errors: ['User not found'] });
     }
     res.json(user);
 };
 //being used 
 const getPostsOf = async (req, res) => {
-    const articles = await userService.getPostsOf(req.params.id);
-    if (!articles) {
-        return res.status(404).json({ errors: ['User not found1'] });
-    }
+    user = req.user;
+    friends = user.friends;
+    iSfriend= await userService.getUserByUserName(req.params.id)
+    if (req.params.id === req.user.userName || friends.includes(iSfriend._id)) {
+        const articles = await userService.getPostsOf(req.params.id);
+        if (!articles) {
+            return res.status(404).json({ errors: ['User not found'] });
+        }
 
-    res.status(200).json(articles);
-};
+        res.status(200).json(articles);
+    } else {
+    return res.status(404).json({ errors: ['Not Friends '] });
+}}
 //being used -id=username 
 const updateUser = async (req, res) => {
     const user = await userService.updateUser(req.params.id, req.body.firstName, req.body.lastName, req.body.profilePic);
     if (!user) {
         return res.status(404).json({ errors: ['User not found'] });
     }
-/*    posts = userService.getPostsOf(req.params.id);
-*/    res.status(200).json(user);/*, posts */
+   res.status(200).json(user);
 };
 const deleteUser = async (req, res) => {//being used -id=username
     const user = await userService.deleteUser(req.params.id);
@@ -57,13 +60,24 @@ const getRequests = async (req, res) => {
     }
     res.json(user);
 };
-const getFriends = async (req, res) => { 
-    user = await userService.getFriends(req.params.id)
-    if (!user) {
-        return res.status(404).json({ errors: ['User not found'] });
+
+
+
+const getFriends = async (req, res) => {
+    user = req.user;
+    friends = user.friends;
+    iSfriend = await userService.getUserByUserName(req.params.id)
+    if (req.params.id === req.user.userName || friends.includes(iSfriend._id)) {
+        user = await userService.getFriends(req.params.id)
+        if (!user) {
+            return res.status(404).json({ errors: ['User not found'] });
+        }
+        res.json(user);
     }
-    res.json(user);
-};
+    else {
+        return res.status(404).json({ errors: ['Not Friends '] });
+    }
+}
 const newFriendRequest = async (req, res) => {
     user = await userService.addFriendRequest(req.params.id, req.body.userName)
     if (!user) {

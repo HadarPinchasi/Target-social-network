@@ -19,8 +19,8 @@ const User = new Schema({
         required: true
     },
     profilePic: {
-        type: String,/////////////////////////?????
-        required: true////////??????????//
+        type: String,
+        required: true
     },
     posts: [{
         type: Schema.Types.ObjectId,
