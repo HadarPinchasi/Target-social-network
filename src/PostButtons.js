@@ -6,12 +6,12 @@ import AddComment from './AddComment';
 import { FaRegShareSquare } from "react-icons/fa";
 import { GrGroup } from "react-icons/gr";
 
-function PostButtons({ id, commentsList, addComment, commentInputRef }) {
+function PostButtons({ id, commentsList, addComment, commentInputRef,myUser }) {
     return (
         <div className="row">
             <input type="checkbox" className="btn-check col-md-4 " id={`btn-check-outlined-${id}`} autoComplete="off" />
             <label className="btn btn-outline-primary col-md-4 border-0" id="likeButton" htmlFor={`btn-check-outlined-${id}`}>
-                <i className="bi bi-hand-thumbs-up"></i>Like
+                <i className="bi bi-hand-thumbs-up"></i> Like
             </label>
             <button type="button" className="btn btn-primary col-md-4 btn-light" data-bs-toggle="modal" data-bs-target={`#exampleModal-${id}`}>
                 <i className="bi bi-chat"></i> Comment
@@ -24,11 +24,11 @@ function PostButtons({ id, commentsList, addComment, commentInputRef }) {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            {commentsList
+                            {commentsList 
                                 .filter(comment => comment.Postid === id)
                                 .map(comment => <Comment key={comment.id} {...comment} />)
                             }
-                            <AddComment addComment={addComment} commentInputRef={commentInputRef} />
+                            <AddComment addComment={addComment} commentInputRef={commentInputRef} myUser={myUser} />
                         </div>
                     </div>
                 </div>

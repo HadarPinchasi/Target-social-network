@@ -6,7 +6,7 @@ function Registration() {
     return (
         < div className="container text-center" >
             <div className="row">
-                <LeftLogo description='Log in' comments='Quick and easy' />
+                <LeftLogo description='Sign Up' comments='Quick and easy' />
                 <SignScreen/>
             </div>
         </div >

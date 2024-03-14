@@ -3,7 +3,8 @@ import PostAddButton from './PostAddButton';
 import { FcVideoCall } from "react-icons/fc";
 import './feed.css';
 
-function AddPost({ onAddPost }) {
+function AddPost({ onAddPost, myUser }) {
+
     const [inputContent, setInputContent] = useState('');
     const [selectedFile, setSelectedFile] = useState(null);
     const [imagePreview, setImagePreview] = useState('');
@@ -24,13 +25,13 @@ function AddPost({ onAddPost }) {
         <div className="card mt-3" style={{ width: '40rem' }}>
             <div className="card-body" style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src="photos/profile.jpg" className="rounded-circle" style={{ width: '40px', height: '40px', marginRight: '10px' }} height='100%' alt=" "></img>
+                    <img src={myUser.profilePic} className="rounded-circle" style={{ width: '40px', height: '40px', marginRight: '10px' }} height='100%' alt=" "></img>
                     <div className="input-group mb-3">   
                         <input type="text" className="form-control" placeholder="What are you thinking about?" aria-label="Recipient's username"
                             aria-describedby="button-addon2" value={inputContent} onChange={(e) => setInputContent(e.target.value)} />
                         <div className="input-group-append">
                         </div>
-                        <PostAddButton onAddPost={addPost} setInputContent={setInputContent} />
+                        <button className="btn btn-primary" type="button" onClick={addPost}>Post</button>
                     </div>
                 </div>
                 {imagePreview && (
