@@ -14,11 +14,6 @@ const createArticle = async (req, res) => {
         res.status(201).json({ article: newArticle});
     } 
 
-/*    res.json(await articleService.createArticle(firstName, lastName, content));
-*/
-/*const getArticles = async (req, res) => {
-    res.json(await articleService.getArticles());
-};*/
 const getArticles = async (req, res) => {
     const user = req.user; 
     if (!user) {

@@ -3,7 +3,6 @@ const usersController = require('../controllers/users');
 const articlesController = require('../controllers/article');
 const express = require('express');
 const loginController = require('../controllers/login');
-const users = require('../models/users');
 var router = express.Router();
 
 router.route('/')
