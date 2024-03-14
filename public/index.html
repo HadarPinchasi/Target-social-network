@@ -24,8 +24,9 @@
     <button onclick="delAr()">DELETE ARTICLE!</button>
     <button onclick="getPost()">GET ARTICLE!</button>
     <button onclick="updateAr()">Update ARTICLE!</button>
-
-
+    <button onclick="getFriends()">GET MY FRIENDS!</button>
+    <button onclick="newFriend()">NEW FRIEND!</button>
+    <button onclick="deleteFriend()">DELETE FRIEND!</button>
     <script>
         let json;
         async function create() {
@@ -44,6 +45,16 @@
             })
             articles = await data.json()
             console.log(articles);
+        }
+        async function newFriend() {
+            const data = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value + '/friends', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ friendId: document.getElementsByTagName('input')[7].value }),
+            }).then(data => data.json())
+            console.log('Friend added successfully:', data);
         }
         async function updateAr() {
             const tok = document.getElementsByTagName('input')[8].value;
@@ -134,8 +145,10 @@
             articles = await data.json()
             console.log(articles);
         }
-
-
+        async function getFriends() {
+            const friends = await fetch('http://localhost:12345/users/' + document.getElementsByTagName('input')[6].value + '/friends').then(data => data.json())
+            console.log(friends);
+        }
     </script>
 </body>
 </html>

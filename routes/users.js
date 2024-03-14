@@ -3,6 +3,7 @@ const usersController = require('../controllers/users');
 const articlesController = require('../controllers/article');
 const express = require('express');
 const loginController = require('../controllers/login');
+const users = require('../models/users');
 var router = express.Router();
 
 router.route('/')
@@ -25,10 +26,5 @@ router.route('/:id/friends/:fid')
     .delete(loginController.isLoggedIn,usersController.deleteFriend);
 router.route('/:id/friendsRequest')
     .get(loginController.isLoggedIn, usersController.getRequests);
-
-
-
-
-
 module.exports = router; 
  

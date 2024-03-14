@@ -13,6 +13,10 @@ const createUser = async (req, res) => {
       return res.status(200).json(newUser);
     }
 };
+const requestFriend = async (req, res) => {
+    try {
+        const { userId, friendId } = req.params;
+        const user = await userService.addFriendRequest(userId, friendId);
 
 //being used id=username
 const getUser = async (req, res) => {
@@ -108,4 +112,3 @@ module.exports = {
     createUser, getUser, updateUser, deleteUser, getPostsOf, getFriends,
     newFriendRequest, approveRequest, deleteFriend, getRequests
 }
-

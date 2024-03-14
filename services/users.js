@@ -18,6 +18,7 @@ const getUserByUserName = async (userName) => {
 //being used -id=username
 const updateUser = async (userName, firstName, lastName, profilePic) => {
     const user = await getUserByUserName(userName);
+
     if (!user) return null;
     if (firstName) user.firstName = firstName;
     if (lastName) user.lastName = lastName;
@@ -112,6 +113,13 @@ const approveRequest = async (userName, userNameFriend) => {
 
     return user;
 };
+const getFriendById = async (id) => { return await User.friends.findOne(id) };
+const deleteFriend = async (id) => {
+    const friend = await getFriendById(id);
+    if (!friend) return null;
+    await User.friends.deleteOne(id);
+    return user;
+};
 
 //userID- userName userfrienid- username 
 const deleteFriend = async (userName,userFriendName) => {
@@ -136,3 +144,4 @@ module.exports = {
     createUser, getUserByUserName, getUserById,
     updateUser, deleteUser, deletePostInUser, getPostsOf, getFriends, addFriendRequest, approveRequest, deleteFriend, getRequests
 }
+
