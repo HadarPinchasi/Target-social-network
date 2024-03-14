@@ -113,14 +113,6 @@ const approveRequest = async (userName, userNameFriend) => {
 
     return user;
 };
-const getFriendById = async (id) => { return await User.friends.findOne(id) };
-const deleteFriend = async (id) => {
-    const friend = await getFriendById(id);
-    if (!friend) return null;
-    await User.friends.deleteOne(id);
-    return user;
-};
-
 //userID- userName userfrienid- username 
 const deleteFriend = async (userName,userFriendName) => {
     const user = await getUserByUserName(userName);
