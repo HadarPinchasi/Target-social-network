@@ -3,7 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import {  Link } from 'react-router-dom';
 import TopScreenIcons from "./TopScreenIcons";
 
-function TopScreen() {
+function TopScreen({ profilePic }) {
 
     function toggleMode() {
         const body = document.body;
@@ -35,10 +35,9 @@ function TopScreen() {
                         </Link>
                         <div>
                             <button onClick={toggleMode} className="rounded-circle border-0" style={{ width: '45px', height: '45px', fontSize: '8px', backgroundColor: 'lightgrey', color: 'black' }}>Change Mode</button>
-                        </div>
-                        <img src="photos/profile.jpg" className="rounded-circle" style={{ width: '45px', height: '45px', marginRight: '10px' }} height='100%' alt="" />
+                        </div>                          
+                        <img src={profilePic} className="rounded-circle" style={{ width: '45px', height: '45px', marginRight: '10px' }} height='100%' alt="" />
                     </div>
-
                 </div>
             </div>
         </nav>

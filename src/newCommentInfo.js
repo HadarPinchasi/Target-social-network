@@ -1,11 +1,11 @@
 // JavaScript source code
 
-const newCommentInfo = (index, postId, content) => ({
+const newCommentInfo = (index, postId, content,myUser) => ({
     id: index + 1,
     Postid: postId,
-    CommentprofilePicture: "photos/profile.jpg",
-    CommentfirstName: "Hadar",
-    CommentlastName: "Pinchasi",
+    CommentprofilePicture: myUser.profilePic,
+    CommentfirstName: myUser.firstName,
+    CommentlastName: myUser.lastName,
     Commentcontent: content
 });
 export default newCommentInfo;

@@ -11,7 +11,7 @@ function DropdownMenu({ handleDelete, handleEdit, deleteObject, editObject }) {
                 ...
             </button>
             <ul className="dropdown-menu dropdown-menu-dark">
-                <a className="dropdown-item active" style={{ cursor: 'pointer' }} onClick={handleDelete}>{deleteObject}</a>
+                <a className="dropdown-item active"  style={{ cursor: 'pointer' }} onClick={handleDelete}>{deleteObject} </a>
                 <li><a className="dropdown-item" style={{ cursor: 'pointer' }} onClick={handleEdit}>{editObject}</a></li>
             </ul>
         </div>

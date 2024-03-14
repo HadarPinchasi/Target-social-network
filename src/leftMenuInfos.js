@@ -6,17 +6,17 @@ import { FcCalendar } from "react-icons/fc";
 
 
 const leftMenuInfos =
-    [{
+    [/*{
         object: < img src="photos/profile.jpg" className="rounded-circle" style={{ width: '30px', height: '30px', marginRight: '10px' }}
             height='100%' alt=" " ></img >,
         descripton: 'Hadar Pinchasi',
         color: null
-    },
-    {
+    },*/
+   /* {
         object: <i className="bi bi-people "></i>,
-        descripton: 'Friends',
+        descripton: 'Friends-*****delete****',
         color: '#0dcaf0'
-    },
+    },*/
     {
         object: <FcClock />,
         descripton: 'Memories',

@@ -10,13 +10,12 @@ function PostEditForm({ editingContent, editingPhoto, onContentChange, onPhotoCh
                 </div>
             )}
             <div className="row">
-                <label className="btn btn-light col-md-3" style={{ maxHeight: '37px' }}>
+                <label className="btn btn-light col-md-4" style={{ maxHeight: '37px' }}>
                     change photo <input type="file" accept="image/*" style={{ display: 'none' }} onChange={onPhotoChange} />
                 </label>
-{/*                <input type="file" className='btn btn-light col mb-3' onChange={onPhotoChange} accept="image/*" /> 
-*/}                <button className='col btn btn-light mb-3' onClick={onPhotoDelete}>Delete Photo</button>
-                <button className="btn btn-light btn-primary col mb-3" onClick={onSaveEdit}>Save</button>
-                <button className="btn btn-light btn-secondary col mb-3" onClick={onCancelEdit}>Cancel</button>
+{/*                <button className='col btn btn-light mb-3' onClick={onPhotoDelete}>Delete Photo</button>
+*/}                <button className="btn btn-light btn-primary col mb-4" onClick={onSaveEdit}>Save</button>
+                <button className="btn btn-light btn-secondary col mb-4" onClick={onCancelEdit}>Cancel</button>
         </div>
         </div>
     );
