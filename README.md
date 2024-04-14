@@ -1,4 +1,4 @@
-project part2
+project part2:
 link to the repository:
 https://github.com/HadarPinchasi/project2.git
 link to jira:
@@ -31,7 +31,8 @@ in order to run tests, run in the terminal npm test.
 
 Hope you enjoy the app!
 
-
+project part 3:
+as you can see, the last merge to the main branch is the *part 3* of the project. 
 
 
 
