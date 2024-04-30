@@ -32,7 +32,7 @@ in order to run tests, run in the terminal npm test.
 Hope you enjoy the app!
 
 project part 3:
-as you can see, the last merge to the main branch is the *part 3* of the project. 
+as you can see, the last merge to the main branch is the *part 3* of the project. the instructions are in the server repository
 
 
 
