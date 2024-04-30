@@ -22,7 +22,10 @@ after log in, as a user you have many options:
 - see accounts: if you click in your name of the person who wrote the post, you will see his first name, last name and profile picture. if you two are friends you also can go to his personal page and see his posts.
 - Friends: in the right side of the feed you can see a list of your friends
 - Friend requests: in the right side of the screen there is a button -"My Friends Requests", click on it and you will be able to see your friends request and approver them. you also have the option to delete friends.
-For your own comfort:
+
+
+
+- For your own comfort:
 you can download these databases to your mongodb and log in as one of the users
 
 (we reccomened username :Dobby. Password: dd1234567)
