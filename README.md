@@ -25,8 +25,8 @@ after log in, as a user you have many options:
 
 
 
-- For your own comfort:
-you can download these databases to your mongodb and log in as one of the users
+--- For your own comfort:
+you can download these databases to your mongodb and log in as one of the users.
 
 (we reccomened username :Dobby. Password: dd1234567)
 [test.articles.json](https://github.com/PedutKliman/Server/files/15168247/test.articles.json)
