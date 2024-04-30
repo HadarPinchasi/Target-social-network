@@ -14,14 +14,14 @@ and real-time content updates. It harnesses the power of MongoDB for resilient d
 
 
 ---Features:
-#Sign up and Log in: you can sign up and create new accoount / after sign up you can log in and see the feed. 
+-Sign up and Log in: you can sign up and create new accoount / after sign up you can log in and see the feed. 
 after log in, as a user you have many options:
-#delete your account : in the left side of your feed, you can click on your name and a window will be open. in the window there are 3 dots, click on them and you will see the option to delete your account.
-#edit your account : in the left side of your feed, you can click on your name and a window will be open. in the window there are 3 dots, click on them and you will see the option to edit your account. you can change your first/last name or your profile picture.
-#see posts: you can see posts of friend/ not friends on your feed (according to the instructions in the exercise), you can like, comment. But you can only edit your own posts.
-#see accounts: if you click in your name of the person who wrote the post, you will see his first name, last name and profile picture. if you two are friends you also can go to his personal page and see his posts.
-#Friends: in the right side of the feed you can see a list of your friends
-#Friend requests: in the right side of the screen there is a button -"My Friends Requests", click on it and you will be able to see your friends request and approver them. you also have the option to delete friends.
+-delete your account : in the left side of your feed, you can click on your name and a window will be open. in the window there are 3 dots, click on them and you will see the option to delete your account.
+-edit your account : in the left side of your feed, you can click on your name and a window will be open. in the window there are 3 dots, click on them and you will see the option to edit your account. you can change your first/last name or your profile picture.
+-see posts: you can see posts of friend/ not friends on your feed (according to the instructions in the exercise), you can like, comment. But you can only edit your own posts.
+-see accounts: if you click in your name of the person who wrote the post, you will see his first name, last name and profile picture. if you two are friends you also can go to his personal page and see his posts.
+-Friends: in the right side of the feed you can see a list of your friends
+-Friend requests: in the right side of the screen there is a button -"My Friends Requests", click on it and you will be able to see your friends request and approver them. you also have the option to delete friends.
 For your own comfort:
 you can download these databases to your mongodb and log in as one of the users
 
