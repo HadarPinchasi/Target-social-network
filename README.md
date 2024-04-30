@@ -24,4 +24,8 @@ after log in, as a user you have many options:
 #Friend requests: in the right side of the screen there is a button -"My Friends Requests", click on it and you will be able to see your friends request and approver them. you also have the option to delete friends.
 For your own comfort:
 you can download these databases to your mongodb and log in as one of the users
+
+(we reccomened username :Dobby. Password: dd1234567)
+[test.articles.json](https://github.com/PedutKliman/Server/files/15168247/test.articles.json)
+
 [test.users.json](https://github.com/PedutKliman/Server/files/15168225/test.users.json)
