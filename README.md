@@ -10,7 +10,7 @@ and real-time content updates. It harnesses the power of MongoDB for resilient d
 3.Configure the essential environment variables by creating a .env file and providing the necessary values.
 4. Initiate the server by running 'npm start'.
 5. Depending on your platform:
-- For web development, in your explorer (no matter if chrome/ any other explorer) write 'localhost12345'.
+- For web development, in your browser (no matter if chrome/ any other explorer) write 'localhost12345'.
 - For Android development, open the tepository: "FOOBAR.Part2" (in the details file) switch to the 'mainPart3' . Instructions specific to Android development will be provided there.
 
 
