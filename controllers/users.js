@@ -1,7 +1,7 @@
 // JavaScript source code
 const userService = require('../services/users');
 
-//being used -id=username
+//being used -id=username V
 const createUser = async (req, res) => {
     const { userName, password, firstName, lastName, profilePic } = req.body;
     const userExist = await userService.getUserByUserName(req.body.userName);
@@ -13,7 +13,7 @@ const createUser = async (req, res) => {
       return res.status(200).json(newUser);
     }
 };
-//being used id=username
+//being used id=username V
 const getUser = async (req, res) => {
     const user = req.user; 
 if (!user) {
@@ -36,21 +36,6 @@ const getPostsOf = async (req, res) => {
     } else {
     return res.status(404).json({ errors: ['Not Friends '] });
 }}
-//being used -id=username 
-const updateUser = async (req, res) => {
-    const user = await userService.updateUser(req.params.id, req.body.firstName, req.body.lastName, req.body.profilePic);
-    if (!user) {
-        return res.status(404).json({ errors: ['User not found'] });
-    }
-   res.status(200).json(user);
-};
-const deleteUser = async (req, res) => {//being used -id=username
-    const user = await userService.deleteUser(req.params.id);
-    if (!user) {
-        return res.status(404).json({ errors: ['User not found2'] });
-    }
-    res.json(user);
-};
 
 const getRequests = async (req, res) => {
     user = await userService.getRequests(req.params.id)
@@ -104,6 +89,6 @@ const deleteFriend = async (req, res) => {
     res.json(user);
 };
 module.exports = {
-    createUser, getUser, updateUser, deleteUser, getPostsOf, getFriends,
+    createUser, getUser, getPostsOf, getFriends,
     newFriendRequest, approveRequest, deleteFriend, getRequests
 }

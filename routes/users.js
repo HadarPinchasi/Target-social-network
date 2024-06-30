@@ -6,17 +6,14 @@ const loginController = require('../controllers/login');
 var router = express.Router();
 
 router.route('/')
-  .post(usersController.createUser); //being used
+  .post(usersController.createUser); //being used V
 router.route('/:id')
-    .get(loginController.isLoggedIn,usersController.getUser)//being used -id=username
-    .patch(loginController.isLoggedIn, usersController.updateUser)//being used -id=username
-    .delete(loginController.isLoggedIn, usersController.deleteUser);//being used -id=username
+    .get(loginController.isLoggedIn,usersController.getUser)//being used -id=username V
 router.route('/:id/posts')
-    .post(loginController.isLoggedIn,articlesController.createArticle)//being used -id=username
-    .get(loginController.isLoggedIn,usersController.getPostsOf)//being used 
+    .post(loginController.isLoggedIn,articlesController.createArticle)//being used -id=username V
 router.route('/:id/posts/:pid')
-    .delete(loginController.isLoggedIn,articlesController.deleteArticle) //being used -id=username
-    .patch(loginController.isLoggedIn,articlesController.updateArticle)//being used -id=username
+    .delete(loginController.isLoggedIn,articlesController.deleteArticle) //being used -id=username--V
+    .patch(loginController.isLoggedIn,articlesController.updateArticle)//being used -id=username--v
 router.route('/:id/friends')
     .get(loginController.isLoggedIn,usersController.getFriends)
     .post(loginController.isLoggedIn,usersController.newFriendRequest);

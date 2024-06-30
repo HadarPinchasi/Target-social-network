@@ -3,9 +3,10 @@ const articleService = require('../services/article');
 const userService = require('../services/users');
 //being used -id=username
 const createArticle = async (req, res) => {
-    const { firstName, lastName, content, userId, userName, photo } = req.body;
-    const user = await userService.getUserById(req.body.userId);
-    const newArticle = await articleService.createArticle(firstName, lastName, content, userId, userName, photo, user.profilePic);
+    const { content, photo } = req.body;
+   // const user = await userService.getUserById(req.body.userId);
+    const user= req.user;
+    const newArticle = await articleService.createArticle(user.firstName,user.lastName, content, user._id, user.userName, photo, user.profilePic);
         if (!user) {
             return res.status(404).json({ errors: ['User not found'] });
         }
@@ -40,7 +41,7 @@ const getArticle = async (req, res) => {
     }
     res.json(article);
 };
-//being used 
+//being used V
 const updateArticle = async (req, res) => {
     const article = await articleService.updateArticle(req.params.pid, req.body.content, req.body.photo);
     if (!article) {
@@ -48,7 +49,7 @@ const updateArticle = async (req, res) => {
     }
     res.json(article);
 };
-//being used -id=username
+//being used -id=usernameV
 const deleteArticle = async (req, res) => {
     const article = await articleService.deleteArticle(req.params.pid);
     if (!article) {

@@ -15,27 +15,6 @@ const getUserById = async (id) => { return await User.findById(id); };
 const getUserByUserName = async (userName) => {
     return await User.findOne({ userName }).select('-password');
 };
-//being used -id=username
-const updateUser = async (userName, firstName, lastName, profilePic) => {
-    const user = await getUserByUserName(userName);
-
-    if (!user) return null;
-    if (firstName) user.firstName = firstName;
-    if (lastName) user.lastName = lastName;
-    if (profilePic) user.profilePic = profilePic;
-    const posts = await getPostsOf(userName);
-    if (posts) {
-        for (const post of posts) {
-            if (firstName) post.firstName = firstName;
-            if (lastName) post.lastName = lastName;
-            if (profilePic) post.profilePic = profilePic;
-            await post.save();
-        }
-    }
-    await user.save();
-    return user;
-};
-//being used -id=username 
 const deletePostInUser = async (id, pid) => {
     const user = await getUserById(id);
     if (!user) return null;
@@ -50,19 +29,6 @@ const getPostsOf = async (id) => {
     return articles;
 };
 
-//being used -id=username
-const deleteUser = async (userName) => {
-    const user = await getUserByUserName(userName);
-    if (!user) return null;
-    const posts = await getPostsOf(userName);
-    if (posts) {
-        for (const post of posts) {
-            await post.deleteOne();
-        }
-    }
-    await user.deleteOne();
-    return user;
-};
 
 
 const getRequests = async (userName) => {
@@ -134,6 +100,6 @@ const deleteFriend = async (userName,userFriendName) => {
 
 module.exports = {
     createUser, getUserByUserName, getUserById,
-    updateUser, deleteUser, deletePostInUser, getPostsOf, getFriends, addFriendRequest, approveRequest, deleteFriend, getRequests
+     deletePostInUser, getPostsOf, getFriends, addFriendRequest, approveRequest, deleteFriend, getRequests
 }
 
